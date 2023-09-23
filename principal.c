@@ -21,23 +21,23 @@ int main() {
 
     Ponto vertices[numVertices];
 
-    for (int i = 0; i < numVertices; i++) {
+    for (int a = 0; a < numVertices; a++) {
         float x, y;
         fscanf(arquivo, "%f %f", &x, &y);
-        vertices[i] = criarPonto(x, y);
+        vertices[a] = criarPonto(x, y);
     }
 
     fclose(arquivo);
 
     float area = 0.0;
-    for (int i = 0; i < numVertices; i++) {
-        int j = (i + 1) % numVertices;
-        area += (vertices[i].X * vertices[j].Y) - (vertices[j].X * vertices[i].Y);
+    for (int a = 0; a < numVertices; a++) {
+        int b = (a + 1) % numVertices;
+        area += (vertices[a].X * vertices[b].Y) - (vertices[b].X * vertices[a].Y);
     }
 
     area = fabs(area) / 2.0;
 
-    printf("A area do poligono e: %.2f\n", area);
+    printf("A área do polígono é %.2f\n", area);
 
     return 0;
 }
